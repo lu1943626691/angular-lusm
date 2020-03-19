@@ -11,7 +11,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartService } from './cart.service';
 import { CartComponent } from './cart/cart.component';
 import { PriceComponent } from './price/price.component';
-import {HttpClientModule} from '@angular/commin/http';
+import {HttpClientModule} from '@angular/common/http';
+import { ShippingComponent } from './shipping/shipping.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,9 @@ import {HttpClientModule} from '@angular/commin/http';
       { path: '', component: ProductListComponent },
        {path:'products/:productId',component:ProductDetailsComponent},
        {path:'cart',component:CartComponent},//购物车
-       {path:"price",component:PriceComponent}
+       {path:"price",component:PriceComponent},
+       {path:"shipping",component:ShippingComponent}
+
 
     ])
   ],
@@ -33,7 +36,8 @@ import {HttpClientModule} from '@angular/commin/http';
     ProductAlertsComponent,
     ProductDetailsComponent,
     CartComponent,
-    PriceComponent
+    PriceComponent,
+    ShippingComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [CartService]
