@@ -7,22 +7,36 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartService } from './cart.service';
+import { CartComponent } from './cart/cart.component';
+import { PriceComponent } from './price/price.component';
+import {HttpClientModule} from '@angular/commin/http';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
+       {path:'products/:productId',component:ProductDetailsComponent},
+       {path:'cart',component:CartComponent},//购物车
+       {path:"price",component:PriceComponent}
+
     ])
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    ProductAlertsComponent
+    ProductAlertsComponent,
+    ProductDetailsComponent,
+    CartComponent,
+    PriceComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [CartService]
 })
 export class AppModule { }
 
