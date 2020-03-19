@@ -27,6 +27,7 @@ export class CartComponent implements OnInit {
   }
   //提交
   onSubmit(customerData){
+    console.log(customerData);
     console.warn("你的订单将会被提交",customerData);
     //购物车清空
     this.items=this.cartService.cleanItems();

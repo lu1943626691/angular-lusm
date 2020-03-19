@@ -1,4 +1,4 @@
-<h1>购物车</h1>
+<<h1>购物车</h1>
 <p>
   <a routerLink='/price'>获取总价格</a>
   
@@ -6,24 +6,26 @@
 <a routerLink="/shipping">运费</a>
 <div  class='cart-item' *ngFor="let item of items">
   <span>{{item.name}}</span>
-  <span>{{item.price |currency}}</span>
+  <span>{{item.price | currency}}</span>
 </div>
 <form [formGroup]="checkoutForm"
       (ngSubmit)="onSubmit(checkoutForm.value)" >
       <div>
         <label for ="name">
-          name
+          Name
         </label>
-        <input type="text" id="name" formControllerName="name">
+        <input type="text" id="name" formControlName="name">
       </div>
 
       <div>
         <label for="address">
           Address
         </label>
-        <input id="address" type="text" formControllerName="address">
+        <input id="address" type="text" formControlName="address">
       </div>
       
 
   <button class="button" type="submit">提交</button>
-</form>
+</form> 
+
+
